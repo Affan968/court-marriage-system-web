@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, CheckCircle, HelpCircle, Shield, Globe, Scale } from 'lucide-react';
+import { MapPin, CheckCircle, HelpCircle, Shield, Globe, Scale, FileText, Users, Heart, Gavel } from 'lucide-react';
 import heroNikahImage from '../../assets/weddingpic.png';
 
 const Home = () => {
@@ -12,116 +12,162 @@ const Home = () => {
     }
   };
 
-  const services = [
-    { title: "Online Nikah", desc: "Shari’a-compliant Nikah conducted remotely with proper consent and witnesses.", icon: <Globe /> },
-    { title: "Court Marriages", desc: "Legally recognised services ensuring documentation and confidentiality under Pakistani law.", icon: <Scale /> },
-    { title: "Nikah Khawan", desc: "Qualified and experienced scholars to conduct ceremonies with religious correctness.", icon: <Shield /> },
-    { title: "Marriage Registration", desc: "Complete support for NADRA computerized records and official certificates.", icon: <CheckCircle /> },
-    { title: "Online Marriages", desc: "Designed for overseas couples, combining legal compliance with Islamic requirements.", icon: <Globe /> },
-    { title: "Family Law", desc: "Expert representation for divorce, Khula, and child custody matters.", icon: <Shield /> }
-  ];
-
   return (
-    <div className="bg-slate-950 text-slate-300 font-sans">
+    <div className="bg-slate-950 text-slate-300 font-sans selection:bg-blue-500/30">
       
-      {/* 1. HERO SECTION */}
-      <section className="relative min-h-screen flex items-center pt-20">
-        <div className="absolute top-0 -left-20 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-blue-500 font-bold uppercase tracking-widest text-xs mb-6">
-              #1 Registered Family Law Firm in Pakistan
-            </motion.div>
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.1] mb-8 tracking-tighter">
-              <motion.span variants={revealVariants} initial="hidden" animate="visible" className="block">Court Marriage &</motion.span>
-              <motion.span variants={revealVariants} initial="hidden" animate="visible" transition={{ delay: 0.5 }} className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 block">
-                Online Nikah Services
-              </motion.span>
-            </h1>
-            <p className="text-xl text-slate-400 mb-10 max-w-xl leading-relaxed">
-              Legal precision, sensitivity, and trust. Providing discreet solutions for court marriage and family law across Pakistan for over 40 years.
+      {/* 1. HERO SECTION (High Impact Keywords) */}
+   {/* 1. HERO SECTION (Optimized H1) */}
+<section className="relative min-h-[90vh] lg:min-h-screen flex items-center pt-24 md:pt-32 pb-12">
+  <div className="absolute top-0 -left-20 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]" />
+  
+  <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-2 gap-12 items-center">
+    <div className="text-center lg:text-left"> {/* Mobile par center, Desktop par left */}
+      <motion.div 
+        initial={{ opacity: 0, y: -10 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        className="text-blue-500 font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs mb-6"
+      >
+        #1 Registered Family Law Firm in Pakistan
+      </motion.div>
+
+      {/* Optimized H1 */}
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-black text-white leading-[1.1] mb-8 tracking-tighter">
+        <motion.span variants={revealVariants} initial="hidden" animate="visible" className="block">
+          Court Marriage &
+        </motion.span>
+        <motion.span 
+          variants={revealVariants} 
+          initial="hidden" 
+          animate="visible" 
+          transition={{ delay: 0.5 }} 
+          className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 block"
+        >
+          Online Nikah Services
+        </motion.span>
+      </h1>
+
+      <p className="text-base md:text-xl text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+        Discreet, lawful, and reliable solutions for <strong>Court Marriage in Islamabad</strong>, Karachi, and Lahore. Expert guidance on <strong>Court Marriage Fees</strong> and Shari’a-compliant <strong>Online Nikah</strong>.
+      </p>
+
+      <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+        <a href="tel:+923322908556" className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-600/20 transition-all transform hover:-translate-y-1 text-center no-underline">
+          Call for Fee Details
+        </a>
+        <button className="w-full sm:w-auto px-8 py-4 bg-slate-900 border border-slate-800 text-white font-bold rounded-xl hover:bg-slate-800 transition-all">
+          Registration Process
+        </button>
+      </div>
+    </div>
+
+    {/* Hero Image - Optimized for cleaner look */}
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.95 }} 
+      animate={{ opacity: 1, scale: 1 }} 
+      transition={{ duration: 1 }} 
+      className="hidden lg:block relative"
+    >
+      <div className="rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl relative group">
+        <img 
+          src={heroNikahImage} 
+          alt="Court Marriage and Online Nikah in Pakistan" 
+          className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-1000" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+      {/* 2. DETAILED INTRODUCTION (Purani web ka main content) */}
+      <section className="py-24 bg-slate-900/30">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Family Law & Marriage Experts</h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full" />
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 text-lg leading-relaxed text-slate-400">
+            <p>
+              <strong>Court-Marriage.Site</strong> has been established to provide reliable, lawful, and discreet solutions for individuals seeking <strong>Court Marriage</strong>, <strong>Online Marriage</strong>, and <strong>Online Nikah e Shari’a</strong>. Our approach combines religious understanding with statutory compliance, ensuring every matter is handled with care and legality.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="tel:+923166644789" className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-600/20 transition-all transform hover:-translate-y-1">Call Now</a>
-              <button className="px-8 py-4 bg-slate-900 border border-slate-800 text-white font-bold rounded-xl hover:bg-slate-800 transition-all">Our Legal Services</button>
+            <p>
+              Whether you require documentation support like a <strong>Duplicate Nikah Nama</strong>, or are facing family disputes such as <strong>Divorce, Khula, or Child Custody</strong>, our platform connects you with experienced family law professionals who understand both Islamic principles and Pakistani law.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. SERVICE DETAILS (Tafseeli Sections) */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Court Marriage Detail */}
+          <div className="p-8 bg-slate-900 rounded-[2rem] border border-slate-800">
+            <Scale className="text-blue-500 mb-4" size={40} />
+            <h3 className="text-2xl font-bold text-white mb-4">Court Marriage Process</h3>
+            <p className="text-slate-400 mb-4">Court marriage is a civil process recognized under Pakistani law that provides legal protection. Our services ensure lawful completion of all formalities, including affidavits, <strong>Nikah registration</strong>, and <strong>NADRA marriage certificates</strong>.</p>
+            <ul className="text-sm space-y-2 text-slate-500">
+              <li>• Full legal recognition and official documentation.</li>
+              <li>• Suitable for couples seeking enforceable legal rights.</li>
+              <li>• 100% confidential and discreet procedure.</li>
+            </ul>
+          </div>
+
+          {/* Online Nikah Detail */}
+          <div className="p-8 bg-slate-900 rounded-[2rem] border border-slate-800">
+            <Globe className="text-blue-500 mb-4" size={40} />
+            <h3 className="text-2xl font-bold text-white mb-4">Online Nikah e Shari’a</h3>
+            <p className="text-slate-400 mb-4">Ideal for overseas Pakistanis, our <strong>Online Nikah</strong> services allow couples to solemnize their marriage remotely while fully complying with Islamic principles (Ijab-o-Qabool, Witnesses, and Mahr).</p>
+            <ul className="text-sm space-y-2 text-slate-500">
+              <li>• Shari’a-compliant Nikah conducted by qualified Nikah Khawan.</li>
+              <li>• Internationally recognized documentation.</li>
+              <li>• Efficient and lawful religious union for distant couples.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. URDU DETAILED SECTION */}
+      <section className="py-24 bg-blue-600/5" dir="rtl">
+        <div className="max-w-7xl mx-auto px-6 text-right">
+          <h2 className="text-4xl font-black text-white mb-12">کورٹ میرج اور فیملی لا سروسز</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-slate-900 p-8 rounded-2xl border-r-4 border-blue-600">
+              <h4 className="text-xl font-bold text-white mb-3 text-blue-400">عدالتی نکاح (Court Marriage)</h4>
+              <p className="text-slate-400 text-sm">پاکستانی قانون کے تحت کورٹ میرج کا باقاعدہ طریقہ کار، جس میں مکمل قانونی تحفظ اور دستاویزات فراہم کی جاتی ہیں۔</p>
+            </div>
+            <div className="bg-slate-900 p-8 rounded-2xl border-r-4 border-blue-600">
+              <h4 className="text-xl font-bold text-white mb-3 text-blue-400">آن لائن نکاح (Online Nikah)</h4>
+              <p className="text-slate-400 text-sm">بیرونِ ملک مقیم پاکستانیوں کے لیے شرعی اصولوں کے مطابق ایجاب و قبول اور نکاح رجسٹریشن کی سہولت۔</p>
+            </div>
+            <div className="bg-slate-900 p-8 rounded-2xl border-r-4 border-blue-600">
+              <h4 className="text-xl font-bold text-white mb-3 text-blue-400">نکاح رجسٹریشن</h4>
+              <p className="text-slate-400 text-sm">نکاح نامہ، کمپیوٹرائزڈ میریج سرٹیفکیٹ، اور ڈپلیکیٹ نکاح نامہ کے حصول میں مکمل قانونی معاونت۔</p>
             </div>
           </div>
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }} className="hidden lg:block relative">
-             <div className="rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl relative group">
-                <img src={heroNikahImage} alt="Legal Marriage" className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-1000" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
-             </div>
-             {/* 40+ Years Badge */}
-             <div className="absolute -bottom-6 -right-6 bg-slate-900 border border-slate-700 p-6 rounded-3xl shadow-2xl">
-                <p className="text-3xl font-black text-white leading-none">40+</p>
-                <p className="text-[10px] text-blue-500 font-bold uppercase tracking-widest mt-1">Years Experience</p>
-             </div>
-          </motion.div>
         </div>
       </section>
 
-      {/* 2. ABOUT & INTRODUCTION SECTION */}
-      <section className="py-24 bg-slate-900/30">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight">Reliable Lawful Solutions</h2>
-          <p className="text-lg text-slate-400 leading-relaxed mb-6">
-            <strong>Court-Marriage.Site</strong> provides reliable, lawful, and discreet solutions for court marriage, online marriage, and Online Nikah e Shari’a. Our approach combines religious understanding with statutory compliance, ensuring care, legality, and respect.
-          </p>
-          <p className="text-slate-500">
-            Whether you are planning a court marriage or need documentation support like a <strong>Duplicate Nikah Nama</strong>, our professionals are here to guide you.
-          </p>
-        </div>
-      </section>
-
-      {/* 3. SERVICES GRID */}
+      {/* 5. ALL SERVICES LIST (Keyword Density) */}
       <section className="py-24 max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, i) => (
-            <div key={i} className="p-10 rounded-[2.5rem] bg-slate-900 border border-slate-800 hover:border-blue-500/50 transition-all group relative overflow-hidden">
-              <div className="text-blue-500 mb-6 group-hover:scale-110 transition-transform duration-300">
-                {React.cloneElement(service.icon, { size: 32 })}
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{service.desc}</p>
+        <h3 className="text-2xl font-bold text-white mb-12 text-center underline decoration-blue-500 underline-offset-8">Complete Marriage & Law Services</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs md:text-sm">
+          {["Court Marriage in Lahore", "Court Marriage in Urdu", "Marriage in Islam", "Online Shadi in Pakistan", "Nikah Khawan in Karachi", "Nikah Khawan in Islamabad", "NADRA Marriage Certificate", "Divorce Certificate", "Duplicate Nikah Nama", "Child Custody Law", "Family Law Experts", "Khula Procedure"].map((item, idx) => (
+            <div key={idx} className="p-4 bg-slate-900/50 border border-slate-800 rounded-xl text-slate-500 hover:text-blue-400 transition-colors">
+              {item}
             </div>
           ))}
         </div>
       </section>
 
-      {/* 4. URDU SECTION (Very Important for Local SEO) */}
-      <section className="py-24 bg-blue-600/5 border-y border-white/5" dir="rtl">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-          <div className="text-right">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-8">کورٹ میرج اور آن لائن نکاح</h2>
-            <div className="space-y-8">
-              <div className="border-r-4 border-blue-600 pr-6">
-                <h4 className="text-xl font-bold text-white mb-2">قانونی تحفظ</h4>
-                <p className="text-slate-400">پاکستانی قانون کے تحت مکمل رجسٹریشن اور قانونی دستاویزات کی فراہمی۔</p>
-              </div>
-              <div className="border-r-4 border-blue-600 pr-6">
-                <h4 className="text-xl font-bold text-white mb-2">آن لائن نکاح</h4>
-                <p className="text-slate-400">بیرونِ ملک مقیم افراد کے لیے مکمل شرعی اور قانونی تقاضوں کے مطابق نکاح۔</p>
-              </div>
-            </div>
-          </div>
-          <div className="p-10 bg-slate-900 rounded-[2rem] border border-slate-800 text-right">
-            <p className="text-xl text-slate-300 leading-loose">
-              ہماری خدمات میں کورٹ میرج، نکاح رجسٹریشن، نکاح خواں، اور فیملی لا سے متعلق تمام قانونی معاملات شامل ہیں۔ ہم اسلام آباد، لاہور، کراچی اور راولپنڈی میں اپنی خدمات فراہم کرتے ہیں۔
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. FAQ SECTION */}
+      {/* 6. EXTENDED FAQ SECTION */}
       <section className="py-24 max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-white mb-12 text-center flex items-center justify-center gap-3">
-          <HelpCircle className="text-blue-500" /> Service-Wise FAQs
-        </h2>
+        <h2 className="text-3xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {[
-            { q: "What is Online Nikah e Shari’a?", a: "It is a Shari’a-compliant Nikah conducted remotely, fulfilling Islamic requirements such as Ijab-o-Qabool, witnesses, and Mahr." },
-            { q: "Is court marriage confidential?", a: "Yes, court marriage is conducted discreetly and lawfully, ensuring privacy and legal protection for consenting adults." },
-            { q: "Can a marriage be registered later?", a: "Yes, delayed registration of Nikah is possible through lawful procedures and we provide full assistance for it." }
+            { q: "What is the difference between Nikah and Marriage Registration?", a: "Nikah registration records the religious ceremony, while marriage registration provide formal legal and governmental documentation like the NADRA computerized certificate." },
+            { q: "Can we perform Online Nikah without physical presence?", a: "Yes, Online Nikah is valid under Shari'a as long as Ijab-o-Qabool, witnesses, and Mahr are properly arranged via digital communication." },
+            { q: "Is court marriage confidential in Pakistan?", a: "Yes, we prioritize the privacy and confidentiality of our clients, ensuring all legal steps are handled discreetly." },
+            { q: "What are the requirements for a duplicate Nikah Nama?", a: "It typically requires an application to the relevant Union Council along with identification and proof of the original marriage." }
           ].map((faq, i) => (
             <details key={i} className="group p-6 bg-slate-900 border border-slate-800 rounded-2xl">
               <summary className="text-white font-bold cursor-pointer list-none flex justify-between items-center">
@@ -133,33 +179,31 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 6. OFFICE LOCATIONS SECTION */}
+      {/* 7. CONTACT & OFFICES */}
       <section className="py-24 bg-slate-950">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-white mb-16 text-center">Our Nationwide Offices</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="p-8 bg-slate-900/50 border border-slate-800 rounded-3xl hover:bg-slate-900 transition-all">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-8 bg-slate-900 rounded-3xl border border-slate-800">
               <MapPin className="text-blue-500 mb-4" />
-              <h3 className="text-white font-bold mb-2">Karachi Head Office</h3>
-              <p className="text-xs text-slate-500 leading-relaxed mb-4">A-1937/B, Metroville III Colony, Scheme 33, Gulzar e Hijri, Karachi.</p>
-              <p className="text-blue-400 font-bold">+92 333 2317861</p>
+              <h4 className="text-white font-bold">Karachi Head Office</h4>
+              <p className="text-xs text-slate-500 mt-2">A-1937/B, Metroville III Colony, Scheme 33, Karachi.</p>
+              <p className="text-blue-400 font-bold mt-4">+92 333 2317861</p>
             </div>
-            <div className="p-8 bg-slate-900/50 border border-slate-800 rounded-3xl hover:bg-slate-900 transition-all">
+            <div className="p-8 bg-slate-900 rounded-3xl border border-slate-800">
               <MapPin className="text-blue-500 mb-4" />
-              <h3 className="text-white font-bold mb-2">Islamabad Office</h3>
-              <p className="text-xs text-slate-500 leading-relaxed mb-4">Office No. 5, 2nd Floor, Laraib Plaza, Karachi Company, G-9 Markaz.</p>
-              <p className="text-blue-400 font-bold">+92 333 2316871</p>
+              <h4 className="text-white font-bold">Islamabad Office</h4>
+              <p className="text-xs text-slate-500 mt-2">Office No. 5, 2nd Floor, Laraib Plaza, G-9 Markaz, Islamabad.</p>
+              <p className="text-blue-400 font-bold mt-4">+92 333 2316871</p>
             </div>
-            <div className="p-8 bg-slate-900/50 border border-slate-800 rounded-3xl hover:bg-slate-900 transition-all">
+            <div className="p-8 bg-slate-900 rounded-3xl border border-slate-800">
               <MapPin className="text-blue-500 mb-4" />
-              <h3 className="text-white font-bold mb-2">Lahore Office</h3>
-              <p className="text-xs text-slate-500 leading-relaxed mb-4">Office No.2, 1st Floor, Al-Mairaj Arcade, Chauburji Chowk.</p>
-              <p className="text-blue-400 font-bold">+92 333 1127836</p>
+              <h4 className="text-white font-bold">Lahore Office</h4>
+              <p className="text-xs text-slate-500 mt-2">Office No.2, 1st Floor, Al-Mairaj Arcade, Chauburji Chowk, Lahore.</p>
+              <p className="text-blue-400 font-bold mt-4">+92 333 1127836</p>
             </div>
           </div>
         </div>
       </section>
-
     </div>
   );
 };

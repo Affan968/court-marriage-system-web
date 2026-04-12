@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { NavLink, Link } from 'react-router';
+import { NavLink, Link } from 'react-router'; // Ensure correct router package
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false); // For Desktop hover
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false); // For Mobile click
 
-  // WhatsApp Configuration for "Get Started"
+  // WhatsApp Configuration
   const waNumber = "923322908556";
   const waMessage = encodeURIComponent("Assalam-o-Alaikum Shah Sahib, maine aapki website LEGAL MARRIAGE dekhi hai aur mujhe mazeed maloomat chahiye.");
   const waUrl = `https://wa.me/${waNumber}?text=${waMessage}`;
@@ -16,7 +17,6 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'Procedure', path: '/procedure' },
     { name: 'Online Nikah', path: '/online-nikah-navigating-the-digital-path-to-marriage' },
-    { name: 'Blogs', path: '/blogs' },
     { name: 'About Us', path: '/about-us' }
   ];
   
@@ -59,7 +59,7 @@ const Navbar = () => {
             </NavLink>
           ))}
 
-          {/* Services Dropdown */}
+          {/* Desktop Services Dropdown */}
           <div 
             className="relative py-4"
             onMouseEnter={() => setIsServicesOpen(true)}
@@ -95,11 +95,7 @@ const Navbar = () => {
             </AnimatePresence>
           </div>
 
-          {/* WhatsApp Button - Desktop */}
-          <a 
-            href={waUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <a href={waUrl} target="_blank" rel="noopener noreferrer"
             className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-500/20"
           >
             Get Started
@@ -132,13 +128,41 @@ const Navbar = () => {
                 </NavLink>
               ))}
 
-              {/* WhatsApp Button - Mobile */}
-              <a 
-                href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
-                className="bg-blue-600 text-white px-5 py-4 rounded-xl text-center text-sm font-bold mt-4"
+              {/* Mobile Services Accordion */}
+              <div className="flex flex-col gap-2">
+                <button 
+                  onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                  className="flex items-center justify-between text-lg font-medium text-slate-400 w-full"
+                >
+                  Services 
+                  <ChevronDown size={20} className={`transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                <AnimatePresence>
+                  {isMobileServicesOpen && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden flex flex-col gap-4 pl-4 border-l border-slate-800 mt-2"
+                    >
+                      {services.map((service) => (
+                        <NavLink 
+                          key={service.path} 
+                          to={service.path} 
+                          onClick={() => setIsOpen(false)}
+                          className={({ isActive }) => `text-base ${isActive ? 'text-blue-400 font-semibold' : 'text-slate-500'}`}
+                        >
+                          {service.name}
+                        </NavLink>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              <a href={waUrl} target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}
+                className="bg-blue-600 text-white px-5 py-4 rounded-xl text-center text-sm font-bold mt-4 shadow-lg shadow-blue-500/20"
               >
                 Contact Now
               </a>
