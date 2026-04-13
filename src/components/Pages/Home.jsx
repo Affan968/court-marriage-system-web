@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, CheckCircle, HelpCircle, Shield, Globe, Scale, FileText, Users, Heart, Gavel } from 'lucide-react';
-import heroNikahImage from '../../assets/weddingpic.png';
+import heroNikahImage from '../../assets/wedding pic.webp';
 
 const Home = () => {
   const revealVariants = {
