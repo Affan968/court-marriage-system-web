@@ -54,10 +54,15 @@ const Home = () => {
             </h3>
 
             {/* Paragraph */}
-            <p className="text-base md:text-lg text-slate-400 mb-10 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-              <strong>Court Marriage & Online Nikah Services in Karachi, Islamabad, Rawalpindi, and Lahore</strong> offer discreet, lawful, and reliable solutions for couples.
-              Backed by <strong>40+ years of legal experience</strong>.
-            </p>
+          <p className="text-base md:text-lg text-slate-400 mb-10 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
+          <strong>Court Marriage & Online Nikah Services in Karachi, Islamabad, Rawalpindi, and Lahore</strong> offer 
+          discreet, lawful, and reliable solutions for couples seeking a smooth and legally recognized union. 
+          Backed by <strong>40+ years of legal experience</strong>, our team comprises member family lawyers of 
+          the <strong>Supreme Court Bar Association </strong>, the <strong>High Court Bar Association</strong>, 
+          and the <strong>Karachi Bar Association</strong>, ensuring trusted, court-defensible legal support. 
+          With expert guidance on court marriage fees and fully Shari’a-compliant online Nikah procedures, we provide 
+          clarity, confidentiality, and complete legal validity at every step.
+        </p>
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
