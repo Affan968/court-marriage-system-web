@@ -25,31 +25,39 @@ const Home = () => {
           <div className="text-center lg:text-left">
             {/* H1 Title */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-black text-white leading-tight mb-8 mt-20 tracking-tighter">
-              <motion.span variants={revealVariants} initial="hidden" animate="visible" className="block pb-2">
-                Court Marriage &
+              <motion.span variants={revealVariants} initial="hidden" animate="visible" className="block pb-2 ">
+           <span className='text-white'>Court</span> <span className='text-yellow-500'>Marriage</span>    
               </motion.span>
               <motion.span
                 variants={revealVariants}
                 initial="hidden"
                 animate="visible"
                 transition={{ delay: 0.5 }}
-                className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 block pb-4"
+                className="text-transparent bg-clip-text  block pb-4"
               >
-                Online Nikah <br /> Services in Karachi
+          <span className='text-white'> & Online</span><span className='text-yellow-500'> Nikah</span> <br /> <span className='text-white '> Services <span className='text-white'>in</span> <span className='text-yellow-500'>Karachi</span> </span>
               </motion.span>
             </h1>
 
             {/* H2 Heading */}
-            <h2 className="text-2xl md:text-4xl font-bold text-blue-400 mt-4 mb-6 leading-normal pb-2">
-              <motion.span variants={revealVariants} initial="hidden" animate="visible" transition={{ delay: 0.8 }} className="block">
-                Legal process for Court marriage
-              </motion.span>
-            </h2>
+           <h2 className="text-2xl md:text-4xl font-bold mt-4 mb-6 leading-normal pb-2">
+  <motion.span 
+    variants={revealVariants} 
+    initial="hidden" 
+    animate="visible" 
+    transition={{ delay: 0.8 }} 
+    className="flex flex-wrap justify-center lg:justify-start gap-x-3 md:gap-x-4"
+  >
+    <span className="text-white">Legal process </span>
+    <span className="text-yellow-500">for Court Marriage</span>
+
+  </motion.span>
+</h2>
 
             {/* H3 Heading */}
             <h3 className="text-xl md:text-3xl mt-2 font-semibold text-white leading-normal pb-6">
               <motion.span variants={revealVariants} initial="hidden" animate="visible" transition={{ delay: 1.1 }} className="block">
-                Same-Day Court Marriage and Nikah Registration in Karachi
+                Same-Day Court Marriage and Nikah Registration services in Karachi
               </motion.span>
             </h3>
 
@@ -79,11 +87,11 @@ const Home = () => {
             transition={{ duration: 1 }}
             className="hidden lg:flex justify-center items-center"
           >
-            <div className="rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl relative group w-full max-w-lg">
+            <div className="rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl relative group w-full max-w-lg mb-40">
               <img
                 src={heroNikahImage}
                 alt="Court Marriage and Online Nikah in Pakistan"
-                className="w-full h-auto object-cover transform scale-105 group-hover:scale-100 transition-transform duration-1000 mb-30"
+                className="w-full h-auto object-cover transform scale-105 group-hover:scale-100 transition-transform duration-1000 mb-40"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
             </div>

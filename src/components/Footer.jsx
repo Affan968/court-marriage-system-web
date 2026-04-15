@@ -8,29 +8,30 @@ const Footer = () => {
 
           {/* Brand Section */}
           <div className="space-y-4">
-            <Link
-              to="/"
-              className="flex items-center gap-3 group no-underline"
-            >
-              <div className="relative flex-shrink-0">
-                <img
-                  src={logo}
-                  alt="Legal Marriage Logo"
-                  className="h-12 w-12 rounded-full object-cover border-2 border-blue-500/50 group-hover:border-blue-400 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.3)]"
-                />
-                {/* Background Glow */}
-                <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-md -z-10 group-hover:bg-blue-500/30 transition-all" />
-              </div>
-
-              <div className="flex flex-col">
-                <h1 className="text-xl md:text-2xl font-black tracking-tighter text-white leading-none">
-                  LEGAL<span className="text-blue-500">MARRIAGE</span>
-                </h1>
-                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-1">
-                  Law Firm
-                </span>
-              </div>
-            </Link>
+        <Link 
+          to="/" 
+          className="flex items-center gap-3 group no-underline"
+        >
+          <div className="relative flex-shrink-0">
+            <img 
+              src={logo} 
+              alt="Legal Marriage Logo" 
+              className="h-12 w-12 rounded-full object-cover border-2 border-blue-500/50 group-hover:border-blue-400 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.3)]" 
+            />
+            {/* Background Glow */}
+            <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-md -z-10 group-hover:bg-blue-500/30 transition-all" />
+          </div>
+        
+          <div className="flex flex-col">
+            <h1 className="text-xl md:text-2xl font-black tracking-tighter text-white leading-none">
+        Court 
+        <span className="text-yellow-500 mx-2">MARRIAGE</span> 
+        Site    </h1>
+            <span className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-1">
+              Law Firm
+            </span>
+          </div>
+        </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               Providing premier legal services for court marriages and Nikah registrations across Pakistan with complete legal protection.
             </p>

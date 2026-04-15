@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { NavLink, Link } from 'react-router'; // Ensure correct router package
+import { NavLink, Link } from 'react-router'; 
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from "../assets/logo.jpeg"
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false); // For Desktop hover
-  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false); // For Mobile click
+  const [isServicesOpen, setIsServicesOpen] = useState(false); 
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false); 
 
-  // WhatsApp Configuration
   const waNumber = "923322908556";
   const waMessage = encodeURIComponent("Assalam-o-Alaikum Shah Sahib, maine aapki website LEGAL MARRIAGE dekhi hai aur mujhe mazeed maloomat chahiye.");
   const waUrl = `https://wa.me/${waNumber}?text=${waMessage}`;
@@ -27,9 +27,10 @@ const Navbar = () => {
     { name: 'Court Marriage Rawalpindi', path: '/services/court-marriage-rawalpindi' },
   ];
 
+  // 1. FIXED: text-blue-500 ko text-yellow-500 se replace kiya
   const activeStyle = ({ isActive }) => 
     `relative text-sm font-medium transition-all duration-300 ${
-      isActive ? 'text-blue-500' : 'text-slate-400 hover:text-white'
+      isActive ? 'text-yellow-500' : 'text-slate-400 hover:text-white'
     }`;
 
   return (
@@ -37,29 +38,24 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
         {/* Logo */}
-<Link 
-  to="/" 
-  className="flex items-center gap-3 group no-underline"
->
-  <div className="relative flex-shrink-0">
-    <img 
-      src={logo} 
-      alt="Legal Marriage Logo" 
-      className="h-12 w-12 rounded-full object-cover border-2 border-blue-500/50 group-hover:border-blue-400 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.3)]" 
-    />
-    {/* Background Glow */}
-    <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-md -z-10 group-hover:bg-blue-500/30 transition-all" />
-  </div>
+        <Link to="/" className="flex items-center gap-3 group no-underline">
+          <div className="relative flex-shrink-0">
+            <img 
+              src={logo} 
+              alt="Legal Marriage Logo" 
+              className="h-12 w-12 rounded-full object-cover border-2 border-blue-500/50 group-hover:border-blue-400 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.3)]" 
+            />
+            <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-md -z-10 group-hover:bg-blue-500/30 transition-all" />
+          </div>
 
-  <div className="flex flex-col">
-    <h1 className="text-xl md:text-2xl font-black tracking-tighter text-white leading-none">
-      LEGAL<span className="text-blue-500">MARRIAGE</span>
-    </h1>
-    <span className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-1">
-      Law Firm
-    </span>
-  </div>
-</Link>
+          <div className="flex flex-col">
+            <h1 className="text-xl md:text-2xl font-black tracking-tighter text-white leading-none">
+              Court <span className="text-yellow-500 mx-2">MARRIAGE</span> Site
+            </h1>
+            <span className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-1">Law Firm</span>
+          </div>
+        </Link>
+
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
@@ -70,7 +66,8 @@ const Navbar = () => {
                   {isActive && (
                     <motion.div 
                       layoutId="activeTab"
-                      className="absolute -bottom-[31px] left-0 right-0 h-[2px] bg-blue-500 shadow-[0_0_10px_#3b82f6]"
+                      // 2. FIXED: Niche wali line ko bhi yellow kar diya (Optional, matching ke liye)
+                      className="absolute -bottom-[31px] left-0 right-0 h-[2px] bg-yellow-500 shadow-[0_0_10px_#eab308]"
                     />
                   )}
                 </>
@@ -102,7 +99,7 @@ const Navbar = () => {
                       to={service.path}
                       className={({ isActive }) => 
                         `block px-4 py-3 text-sm rounded-xl transition-all ${
-                          isActive ? 'bg-blue-600/20 text-blue-400' : 'text-slate-400 hover:text-white hover:bg-white/5'
+                          isActive ? 'bg-yellow-500/20 text-yellow-500' : 'text-slate-400 hover:text-white hover:bg-white/5'
                         }`
                       }
                     >
@@ -115,7 +112,7 @@ const Navbar = () => {
           </div>
 
           <a href={waUrl} target="_blank" rel="noopener noreferrer"
-            className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-500/20"
+            className="bg-yellow-500 hover:bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-yellow-500/20"
           >
             Get Started
           </a>
@@ -141,13 +138,12 @@ const Navbar = () => {
             <div className="px-6 py-8 flex flex-col gap-6">
               {navItems.map((item) => (
                 <NavLink key={item.name} to={item.path} onClick={() => setIsOpen(false)}
-                  className={({ isActive }) => `text-lg font-medium ${isActive ? 'text-blue-500' : 'text-slate-400'}`}
+                  className={({ isActive }) => `text-lg font-medium ${isActive ? 'text-yellow-500' : 'text-slate-400'}`}
                 >
                   {item.name}
                 </NavLink>
               ))}
 
-              {/* Mobile Services Accordion */}
               <div className="flex flex-col gap-2">
                 <button 
                   onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
@@ -170,7 +166,7 @@ const Navbar = () => {
                           key={service.path} 
                           to={service.path} 
                           onClick={() => setIsOpen(false)}
-                          className={({ isActive }) => `text-base ${isActive ? 'text-blue-400 font-semibold' : 'text-slate-500'}`}
+                          className={({ isActive }) => `text-base ${isActive ? 'text-yellow-500 font-semibold' : 'text-slate-500'}`}
                         >
                           {service.name}
                         </NavLink>
