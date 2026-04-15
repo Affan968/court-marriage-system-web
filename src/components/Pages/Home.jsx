@@ -42,13 +42,19 @@ const Home = () => {
           transition={{ delay: 0.5 }} 
           className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 block"
         >
-          Online Nikah Services
+          Online Nikah <br /> Services in karachi
         </motion.span>
       </h1>
 
-      <p className="text-base md:text-xl text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-        Discreet, lawful, and reliable solutions for <strong>Court Marriage in Islamabad</strong>, Karachi, and Lahore. Expert guidance on <strong>Court Marriage Fees</strong> and Shari’a-compliant <strong>Online Nikah</strong>.
-      </p>
+<p className="text-base md:text-xl text-slate-400 mb-10 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
+  <strong>Court Marriage & Online Nikah Services in Karachi, Islamabad, Rawalpindi, and Lahore</strong> offer discreet, lawful, and reliable solutions for couples seeking a smooth and legally recognized union. 
+  Backed by <strong>40+ years of legal experience</strong>, our team comprises member family lawyers of 
+  the <strong>Supreme Court Bar Association of Pakistan</strong>, the High Court Bar Association, 
+  and the Karachi Bar Association, ensuring trusted, court-defensible legal support. 
+  With expert guidance on <strong>court marriage fees</strong> and fully Shari’a-compliant 
+  <strong> online Nikah</strong> procedures, we provide clarity, confidentiality, 
+  and complete legal validity at every step.
+</p>
 
       <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
         <a href="tel:+923322908556" className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-600/20 transition-all transform hover:-translate-y-1 text-center no-underline">
