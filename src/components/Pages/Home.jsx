@@ -6,86 +6,88 @@ import heroNikahImage from '../../assets/wedding pic.webp';
 const Home = () => {
   const revealVariants = {
     hidden: { clipPath: 'inset(0 100% 0 0)' },
-    visible: { 
-      clipPath: 'inset(0 0% 0 0)', 
-      transition: { duration: 1.5, ease: "easeInOut" } 
+    visible: {
+      clipPath: 'inset(0 0% 0 0)',
+      transition: { duration: 1.5, ease: "easeInOut" }
     }
   };
 
   return (
     <div className="bg-slate-950 text-slate-300 font-sans selection:bg-blue-500/30">
-      
-      {/* 1. HERO SECTION (High Impact Keywords) */}
-   {/* 1. HERO SECTION (Optimized H1) */}
-<section className="relative min-h-[90vh] lg:min-h-screen flex items-center pt-24 md:pt-32 pb-12">
-  <div className="absolute top-0 -left-20 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]" />
-  
-  <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-2 gap-12 items-center">
-    <div className="text-center lg:text-left"> {/* Mobile par center, Desktop par left */}
-      <motion.div 
-        initial={{ opacity: 0, y: -10 }} 
-        animate={{ opacity: 1, y: 0 }} 
-        className="text-blue-500 font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs mb-6"
-      >
-        #1 Registered Family Law Firm in Pakistan
-      </motion.div>
 
-      {/* Optimized H1 */}
-      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-black text-white leading-[1.1] mb-8 tracking-tighter">
-        <motion.span variants={revealVariants} initial="hidden" animate="visible" className="block">
-          Court Marriage &
-        </motion.span>
-        <motion.span 
-          variants={revealVariants} 
-          initial="hidden" 
-          animate="visible" 
-          transition={{ delay: 0.5 }} 
-          className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 block"
-        >
-          Online Nikah <br /> Services in karachi
-        </motion.span>
-      </h1>
+      {/* 1. HERO SECTION (Alignment Fixed) */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 lg:pt-0">
+        <div className="absolute top-0 -left-20 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]" />
 
-<p className="text-base md:text-xl text-slate-400 mb-10 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
-  <strong>Court Marriage & Online Nikah Services in Karachi, Islamabad, Rawalpindi, and Lahore</strong> offer discreet, lawful, and reliable solutions for couples seeking a smooth and legally recognized union. 
-  Backed by <strong>40+ years of legal experience</strong>, our team comprises member family lawyers of 
-  the <strong>Supreme Court Bar Association of Pakistan</strong>, the High Court Bar Association, 
-  and the Karachi Bar Association, ensuring trusted, court-defensible legal support. 
-  With expert guidance on <strong>court marriage fees</strong> and fully Shari’a-compliant 
-  <strong> online Nikah</strong> procedures, we provide clarity, confidentiality, 
-  and complete legal validity at every step.
-</p>
+        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-2 gap-12 items-center">
 
-      <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-        <a href="tel:+923322908556" className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-600/20 transition-all transform hover:-translate-y-1 text-center no-underline">
-          Call for Fee Details
-        </a>
-        <button className="w-full sm:w-auto px-8 py-4 bg-slate-900 border border-slate-800 text-white font-bold rounded-xl hover:bg-slate-800 transition-all">
-          Registration Process
-        </button>
-      </div>
-    </div>
+          {/* Left Column: Text Content */}
+          <div className="text-center lg:text-left">
+            {/* H1 Title */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-black text-white leading-tight mb-8 mt-20 tracking-tighter">
+              <motion.span variants={revealVariants} initial="hidden" animate="visible" className="block pb-2">
+                Court Marriage &
+              </motion.span>
+              <motion.span
+                variants={revealVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ delay: 0.5 }}
+                className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 block pb-4"
+              >
+                Online Nikah <br /> Services in Karachi
+              </motion.span>
+            </h1>
 
-    {/* Hero Image - Optimized for cleaner look */}
-    <motion.div 
-      initial={{ opacity: 0, scale: 0.95 }} 
-      animate={{ opacity: 1, scale: 1 }} 
-      transition={{ duration: 1 }} 
-      className="hidden lg:block relative"
-    >
-      <div className="rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl relative group">
-        <img 
-          src={heroNikahImage} 
-          alt="Court Marriage and Online Nikah in Pakistan" 
-          className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-1000" 
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
-      </div>
-    </motion.div>
-  </div>
-</section>
+            {/* H2 Heading */}
+            <h2 className="text-2xl md:text-4xl font-bold text-blue-400 mt-4 mb-6 leading-normal pb-2">
+              <motion.span variants={revealVariants} initial="hidden" animate="visible" transition={{ delay: 0.8 }} className="block">
+                Legal process for Court marriage
+              </motion.span>
+            </h2>
 
-      {/* 2. DETAILED INTRODUCTION (Purani web ka main content) */}
+            {/* H3 Heading */}
+            <h3 className="text-xl md:text-3xl mt-2 font-semibold text-white leading-normal pb-6">
+              <motion.span variants={revealVariants} initial="hidden" animate="visible" transition={{ delay: 1.1 }} className="block">
+                Same-Day Court Marriage and Nikah Registration in Karachi
+              </motion.span>
+            </h3>
+
+            {/* Paragraph */}
+            <p className="text-base md:text-lg text-slate-400 mb-10 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
+              <strong>Court Marriage & Online Nikah Services in Karachi, Islamabad, Rawalpindi, and Lahore</strong> offer discreet, lawful, and reliable solutions for couples.
+              Backed by <strong>40+ years of legal experience</strong>.
+            </p>
+
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <a href="tel:+923322908556" className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg transition-all text-center no-underline">
+                Call for Fee Details
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Image (H1 ke barabar set kar di hai) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="hidden lg:flex justify-center items-center"
+          >
+            <div className="rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl relative group w-full max-w-lg">
+              <img
+                src={heroNikahImage}
+                alt="Court Marriage and Online Nikah in Pakistan"
+                className="w-full h-auto object-cover transform scale-105 group-hover:scale-100 transition-transform duration-1000 mb-30"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
+
+      {/* 2. DETAILED INTRODUCTION */}
       <section className="py-24 bg-slate-900/30">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -103,10 +105,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 3. SERVICE DETAILS (Tafseeli Sections) */}
+      {/* 3. SERVICE DETAILS */}
       <section className="py-24 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Court Marriage Detail */}
           <div className="p-8 bg-slate-900 rounded-[2rem] border border-slate-800">
             <Scale className="text-blue-500 mb-4" size={40} />
             <h3 className="text-2xl font-bold text-white mb-4">Court Marriage Process</h3>
@@ -118,7 +119,6 @@ const Home = () => {
             </ul>
           </div>
 
-          {/* Online Nikah Detail */}
           <div className="p-8 bg-slate-900 rounded-[2rem] border border-slate-800">
             <Globe className="text-blue-500 mb-4" size={40} />
             <h3 className="text-2xl font-bold text-white mb-4">Online Nikah e Shari’a</h3>
@@ -132,7 +132,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 4. URDU DETAILED SECTION */}
+      {/* 4. URDU SECTION */}
       <section className="py-24 bg-blue-600/5" dir="rtl">
         <div className="max-w-7xl mx-auto px-6 text-right">
           <h2 className="text-4xl font-black text-white mb-12">کورٹ میرج اور فیملی لا سروسز</h2>
@@ -153,7 +153,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 5. ALL SERVICES LIST (Keyword Density) */}
+      {/* 5. SERVICES LIST */}
       <section className="py-24 max-w-7xl mx-auto px-6">
         <h3 className="text-2xl font-bold text-white mb-12 text-center underline decoration-blue-500 underline-offset-8">Complete Marriage & Law Services</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs md:text-sm">
@@ -165,7 +165,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 6. EXTENDED FAQ SECTION */}
+      {/* 6. FAQ SECTION */}
       <section className="py-24 max-w-4xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
         <div className="space-y-4">
@@ -192,20 +192,20 @@ const Home = () => {
             <div className="p-8 bg-slate-900 rounded-3xl border border-slate-800">
               <MapPin className="text-blue-500 mb-4" />
               <h4 className="text-white font-bold">Karachi Head Office</h4>
-              <p className="text-xs text-slate-500 mt-2">A-1937/B, Metroville III Colony, Scheme 33, Karachi.</p>
-              <p className="text-blue-400 font-bold mt-4">+92 333 2317861</p>
+              <p className="text-xs text-slate-500 mt-2">Supreme Corner Apartments, Johar Chowrangi, Block 18, Gulistan-e-Johar</p>
+              <p className="text-blue-400 font-bold mt-4">+92 331 6644789</p>
             </div>
             <div className="p-8 bg-slate-900 rounded-3xl border border-slate-800">
               <MapPin className="text-blue-500 mb-4" />
               <h4 className="text-white font-bold">Islamabad Office</h4>
-              <p className="text-xs text-slate-500 mt-2">Office No. 5, 2nd Floor, Laraib Plaza, G-9 Markaz, Islamabad.</p>
-              <p className="text-blue-400 font-bold mt-4">+92 333 2316871</p>
+              <p className="text-xs text-slate-500 mt-2">Laraib Plaza, Karachi Company, Near TCS Express Centre, G-9 Markaz, Mangla Road</p>
+              <p className="text-blue-400 font-bold mt-4">+92 302 6644789</p>
             </div>
             <div className="p-8 bg-slate-900 rounded-3xl border border-slate-800">
               <MapPin className="text-blue-500 mb-4" />
               <h4 className="text-white font-bold">Lahore Office</h4>
-              <p className="text-xs text-slate-500 mt-2">Office No.2, 1st Floor, Al-Mairaj Arcade, Chauburji Chowk, Lahore.</p>
-              <p className="text-blue-400 font-bold mt-4">+92 333 1127836</p>
+              <p className="text-xs text-slate-500 mt-2">1st Floor, Al-Mairaj Arcade, Near Surayya Azeem Trust Hospital, Chauburji Chowk.</p>
+              <p className="text-blue-400 font-bold mt-4">+92 316 6644789</p>
             </div>
           </div>
         </div>

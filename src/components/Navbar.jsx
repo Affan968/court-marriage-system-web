@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router'; // Ensure correct router package
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import logo from "../assets/logo.jpeg"
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false); // For Desktop hover
@@ -37,10 +37,29 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
         {/* Logo */}
-        <Link to="/" className="text-2xl font-black tracking-tighter text-white">
-          LEGAL<span className="text-blue-500">MARRIAGE</span>
-        </Link>
-        
+<Link 
+  to="/" 
+  className="flex items-center gap-3 group no-underline"
+>
+  <div className="relative flex-shrink-0">
+    <img 
+      src={logo} 
+      alt="Legal Marriage Logo" 
+      className="h-12 w-12 rounded-full object-cover border-2 border-blue-500/50 group-hover:border-blue-400 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.3)]" 
+    />
+    {/* Background Glow */}
+    <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-md -z-10 group-hover:bg-blue-500/30 transition-all" />
+  </div>
+
+  <div className="flex flex-col">
+    <h1 className="text-xl md:text-2xl font-black tracking-tighter text-white leading-none">
+      LEGAL<span className="text-blue-500">MARRIAGE</span>
+    </h1>
+    <span className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-1">
+      Law Firm
+    </span>
+  </div>
+</Link>
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
