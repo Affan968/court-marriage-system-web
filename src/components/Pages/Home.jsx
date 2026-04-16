@@ -26,7 +26,7 @@ const Home = () => {
             {/* H1 Title */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-black text-white leading-tight mb-8 mt-20 tracking-tighter">
               <motion.span variants={revealVariants} initial="hidden" animate="visible" className="block pb-2 ">
-           <span className='text-white'>Court</span> <span className='text-yellow-500'>Marriage</span>    
+           <span className='text-white'>Court Marriage</span> 
               </motion.span>
               <motion.span
                 variants={revealVariants}
@@ -35,7 +35,7 @@ const Home = () => {
                 transition={{ delay: 0.5 }}
                 className="text-transparent bg-clip-text  block pb-4"
               >
-          <span className='text-white'> & Online</span><span className='text-yellow-500'> Nikah</span> <br /> <span className='text-white '> Services <span className='text-white'>in</span> <span className='text-yellow-500'>Karachi</span> </span>
+          <span className='text-blue-500'> & Online Nikkah Services in Karachi</span> 
               </motion.span>
             </h1>
 
@@ -48,8 +48,7 @@ const Home = () => {
     transition={{ delay: 0.8 }} 
     className="flex flex-wrap justify-center lg:justify-start gap-x-3 md:gap-x-4"
   >
-    <span className="text-white">Legal process </span>
-    <span className="text-yellow-500">for Court Marriage</span>
+    <span className="text-blue-400">Legal process for Court Marriage in Karachi </span>
 
   </motion.span>
 </h2>

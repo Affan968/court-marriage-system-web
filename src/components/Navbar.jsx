@@ -30,7 +30,7 @@ const Navbar = () => {
   // 1. FIXED: text-blue-500 ko text-yellow-500 se replace kiya
   const activeStyle = ({ isActive }) => 
     `relative text-sm font-medium transition-all duration-300 ${
-      isActive ? 'text-yellow-500' : 'text-slate-400 hover:text-white'
+      isActive ? 'text-blue-500' : 'text-slate-400 hover:text-white'
     }`;
 
   return (
@@ -67,7 +67,7 @@ const Navbar = () => {
                     <motion.div 
                       layoutId="activeTab"
                       // 2. FIXED: Niche wali line ko bhi yellow kar diya (Optional, matching ke liye)
-                      className="absolute -bottom-[31px] left-0 right-0 h-[2px] bg-yellow-500 shadow-[0_0_10px_#eab308]"
+                      className="absolute -bottom-[31px] left-0 right-0 h-[2px] bg-blue-500 shadow-[0_0_10px_#eab308]"
                     />
                   )}
                 </>
@@ -112,7 +112,7 @@ const Navbar = () => {
           </div>
 
           <a href={waUrl} target="_blank" rel="noopener noreferrer"
-            className="bg-yellow-500 hover:bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-yellow-500/20"
+            className="hover:bg-yellow-500 bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-yellow-500/20"
           >
             Get Started
           </a>
