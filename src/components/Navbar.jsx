@@ -27,21 +27,24 @@ const Navbar = () => {
     { name: 'Court Marriage Rawalpindi', path: '/services/court-marriage-rawalpindi' },
   ];
 
+  // Fix 1: Color Contrast improved from slate-400 to slate-300 for better readability
   const activeStyle = ({ isActive }) => 
     `relative text-sm font-medium transition-all duration-300 ${
-      isActive ? 'text-blue-500' : 'text-slate-400 hover:text-white'
+      isActive ? 'text-blue-500' : 'text-slate-300 hover:text-white'
     }`;
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800 w-full">
+    <nav className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/90 border-b border-slate-800 w-full" role="navigation">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
-        {/* Logo - Added aria-label for accessibility */}
         <Link to="/" className="flex items-center gap-3 group no-underline" aria-label="Legal Marriage - Home">
           <div className="relative flex-shrink-0">
             <img 
               src={logo} 
               alt="Legal Marriage Law Firm Logo" 
+              // Fix 2: Added explicit width/height for LCP & Performance
+              width="48"
+              height="48"
               className="h-12 w-12 rounded-full object-cover border-2 border-blue-500/50 group-hover:border-blue-400 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.3)]" 
             />
             <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-md -z-10 group-hover:bg-blue-500/30 transition-all" />
@@ -51,7 +54,8 @@ const Navbar = () => {
             <h1 className="text-xl md:text-2xl font-black tracking-tighter text-white leading-none">
               Court <span className="text-yellow-500 mx-2">MARRIAGE</span> Site
             </h1>
-            <span className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-1">Law Firm</span>
+            {/* Fix 3: Contrast improved (slate-500 to slate-400) */}
+            <span className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mt-1">Law Firm</span>
           </div>
         </Link>
 
@@ -65,7 +69,7 @@ const Navbar = () => {
                   {isActive && (
                     <motion.div 
                       layoutId="activeTab"
-                      className="absolute -bottom-[31px] left-0 right-0 h-[2px] bg-blue-500 shadow-[0_0_10px_#eab308]"
+                      className="absolute -bottom-[31px] left-0 right-0 h-[2px] bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"
                     />
                   )}
                 </>
@@ -73,14 +77,14 @@ const Navbar = () => {
             </NavLink>
           ))}
 
-          {/* Desktop Services Dropdown */}
           <div 
             className="relative py-4"
             onMouseEnter={() => setIsServicesOpen(true)}
             onMouseLeave={() => setIsServicesOpen(false)}
           >
+            {/* Contrast fix: slate-400 to slate-300 */}
             <button 
-              className="flex items-center gap-1 text-sm font-medium text-slate-400 hover:text-white transition-colors"
+              className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white transition-colors"
               aria-expanded={isServicesOpen}
               aria-haspopup="true"
             >
@@ -101,7 +105,7 @@ const Navbar = () => {
                       to={service.path}
                       className={({ isActive }) => 
                         `block px-4 py-3 text-sm rounded-xl transition-all ${
-                          isActive ? 'bg-yellow-500/20 text-yellow-500' : 'text-slate-400 hover:text-white hover:bg-white/5'
+                          isActive ? 'bg-yellow-500/20 text-yellow-500' : 'text-slate-300 hover:text-white hover:bg-white/5'
                         }`
                       }
                     >
@@ -114,21 +118,21 @@ const Navbar = () => {
           </div>
 
           <a href={waUrl} target="_blank" rel="noopener noreferrer"
-            className="hover:bg-yellow-500 bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-yellow-500/20"
+            className="hover:bg-yellow-600 bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg"
           >
             Get Started
           </a>
         </div>
 
-        {/* Mobile Toggle - Fixed: Added aria-label for Screen Readers */}
+        {/* Mobile Toggle - FIXED: aria-label for Screen Readers */}
         <div className="md:hidden flex items-center">
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="text-white p-2"
-            aria-label={isOpen ? "Close menu" : "Open menu"}
+            className="text-white p-2 focus:outline-none"
+            aria-label={isOpen ? "Close main menu" : "Open main menu"}
             aria-expanded={isOpen}
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={28} aria-hidden="true" /> : <Menu size={28} aria-hidden="true" />}
           </button>
         </div>
       </div>
@@ -145,7 +149,7 @@ const Navbar = () => {
             <div className="px-6 py-8 flex flex-col gap-6">
               {navItems.map((item) => (
                 <NavLink key={item.name} to={item.path} onClick={() => setIsOpen(false)}
-                  className={({ isActive }) => `text-lg font-medium ${isActive ? 'text-yellow-500' : 'text-slate-400'}`}
+                  className={({ isActive }) => `text-lg font-medium ${isActive ? 'text-yellow-500' : 'text-slate-300'}`}
                 >
                   {item.name}
                 </NavLink>
@@ -154,7 +158,7 @@ const Navbar = () => {
               <div className="flex flex-col gap-2">
                 <button 
                   onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                  className="flex items-center justify-between text-lg font-medium text-slate-400 w-full"
+                  className="flex items-center justify-between text-lg font-medium text-slate-300 w-full"
                   aria-expanded={isMobileServicesOpen}
                 >
                   Services 
@@ -174,7 +178,7 @@ const Navbar = () => {
                           key={service.path} 
                           to={service.path} 
                           onClick={() => setIsOpen(false)}
-                          className={({ isActive }) => `text-base ${isActive ? 'text-yellow-500 font-semibold' : 'text-slate-500'}`}
+                          className={({ isActive }) => `text-base ${isActive ? 'text-yellow-500 font-semibold' : 'text-slate-400'}`}
                         >
                           {service.name}
                         </NavLink>
