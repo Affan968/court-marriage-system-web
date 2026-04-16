@@ -91,7 +91,7 @@ const Home = () => {
                 src={heroNikahImage}
                 alt="Court Marriage and Online Nikah in Pakistan"
                 className="w-full h-auto object-cover transform scale-105 group-hover:scale-100 transition-transform duration-1000 mb-40"
-              />
+             priority />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
             </div>
           </motion.div>

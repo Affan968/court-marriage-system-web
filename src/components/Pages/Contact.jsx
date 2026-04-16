@@ -1,13 +1,12 @@
 import { Form, useActionData, useNavigation } from "react-router";
 
-// The 'action' function handles the form submission on the server-side (v7 feature)
+// The 'action' function handles the form submission on the server-side
 export async function action({ request }) {
   const formData = await request.formData();
   const name = formData.get("name");
   const phone = formData.get("phone");
   const message = formData.get("message");
 
-  // This is where you would normally send the data to your lead management system (like ClickUp)
   console.log("New Lead Received:", { name, phone, message });
 
   return { 
@@ -17,7 +16,7 @@ export async function action({ request }) {
 }
 
 export default function Contact() {
-  const actionData = useActionData(); // Catches the return from the action function
+  const actionData = useActionData();
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
 
@@ -28,17 +27,21 @@ export default function Contact() {
         Get legal assistance for Court Marriage and Nikah registration.
       </p>
 
-      {/* Success Message Display */}
       {actionData?.success && (
-        <div style={{ padding: '15px', backgroundColor: '#d4edda', color: '#155724', borderRadius: '5px', marginBottom: '20px', textAlign: 'center' }}>
+        <div 
+          role="alert" // Added for Accessibility
+          style={{ padding: '15px', backgroundColor: '#d4edda', color: '#155724', borderRadius: '5px', marginBottom: '20px', textAlign: 'center' }}
+        >
           {actionData.message}
         </div>
       )}
 
       <Form method="post" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         <div style={formGroupStyle}>
-          <label style={labelStyle}>Full Name</label>
+          {/* Linked label to input using htmlFor/id */}
+          <label htmlFor="full-name" style={labelStyle}>Full Name</label>
           <input 
+            id="full-name" // Linked to label
             type="text" 
             name="name" 
             placeholder="e.g. Mohsin Ali" 
@@ -48,8 +51,10 @@ export default function Contact() {
         </div>
 
         <div style={formGroupStyle}>
-          <label style={labelStyle}>Phone Number / WhatsApp</label>
+          {/* Linked label to input using htmlFor/id */}
+          <label htmlFor="phone-number" style={labelStyle}>Phone Number / WhatsApp</label>
           <input 
+            id="phone-number" // Linked to label
             type="tel" 
             name="phone" 
             placeholder="0302-6644789" 
@@ -59,8 +64,10 @@ export default function Contact() {
         </div>
 
         <div style={formGroupStyle}>
-          <label style={labelStyle}>Case Requirements</label>
+          {/* Linked label to textarea using htmlFor/id */}
+          <label htmlFor="case-requirements" style={labelStyle}>Case Requirements</label>
           <textarea 
+            id="case-requirements" // Linked to label
             name="message" 
             rows="5" 
             placeholder="How can we help you?" 
@@ -71,6 +78,7 @@ export default function Contact() {
         <button 
           type="submit" 
           disabled={isSubmitting}
+          aria-label={isSubmitting ? "Submitting your inquiry" : "Send your inquiry"} // Added for Accessibility
           style={{ 
             padding: '15px', 
             background: isSubmitting ? '#999' : '#002147', 
@@ -94,7 +102,6 @@ export default function Contact() {
   );
 }
 
-// Internal Styles
 const formGroupStyle = { display: 'flex', flexDirection: 'column', gap: '5px' };
 const labelStyle = { fontWeight: 'bold', color: '#333' };
 const inputStyle = { padding: '12px', border: '1px solid #ccc', borderRadius: '4px', fontSize: '1rem' };

@@ -27,7 +27,6 @@ const Navbar = () => {
     { name: 'Court Marriage Rawalpindi', path: '/services/court-marriage-rawalpindi' },
   ];
 
-  // 1. FIXED: text-blue-500 ko text-yellow-500 se replace kiya
   const activeStyle = ({ isActive }) => 
     `relative text-sm font-medium transition-all duration-300 ${
       isActive ? 'text-blue-500' : 'text-slate-400 hover:text-white'
@@ -37,12 +36,12 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800 w-full">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group no-underline">
+        {/* Logo - Added aria-label for accessibility */}
+        <Link to="/" className="flex items-center gap-3 group no-underline" aria-label="Legal Marriage - Home">
           <div className="relative flex-shrink-0">
             <img 
               src={logo} 
-              alt="Legal Marriage Logo" 
+              alt="Legal Marriage Law Firm Logo" 
               className="h-12 w-12 rounded-full object-cover border-2 border-blue-500/50 group-hover:border-blue-400 transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.3)]" 
             />
             <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-md -z-10 group-hover:bg-blue-500/30 transition-all" />
@@ -66,7 +65,6 @@ const Navbar = () => {
                   {isActive && (
                     <motion.div 
                       layoutId="activeTab"
-                      // 2. FIXED: Niche wali line ko bhi yellow kar diya (Optional, matching ke liye)
                       className="absolute -bottom-[31px] left-0 right-0 h-[2px] bg-blue-500 shadow-[0_0_10px_#eab308]"
                     />
                   )}
@@ -81,7 +79,11 @@ const Navbar = () => {
             onMouseEnter={() => setIsServicesOpen(true)}
             onMouseLeave={() => setIsServicesOpen(false)}
           >
-            <button className="flex items-center gap-1 text-sm font-medium text-slate-400 hover:text-white transition-colors">
+            <button 
+              className="flex items-center gap-1 text-sm font-medium text-slate-400 hover:text-white transition-colors"
+              aria-expanded={isServicesOpen}
+              aria-haspopup="true"
+            >
               Services <ChevronDown size={14} className={`transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
             </button>
 
@@ -118,9 +120,14 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Toggle - Fixed: Added aria-label for Screen Readers */}
         <div className="md:hidden flex items-center">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white p-2">
+          <button 
+            onClick={() => setIsOpen(!isOpen)} 
+            className="text-white p-2"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+          >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -148,6 +155,7 @@ const Navbar = () => {
                 <button 
                   onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                   className="flex items-center justify-between text-lg font-medium text-slate-400 w-full"
+                  aria-expanded={isMobileServicesOpen}
                 >
                   Services 
                   <ChevronDown size={20} className={`transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
