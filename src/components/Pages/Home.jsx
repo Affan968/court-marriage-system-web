@@ -1,7 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, CheckCircle, HelpCircle, Shield, Globe, Scale, FileText, Users, Heart, Gavel } from 'lucide-react';
 import heroNikahImage from '../../assets/wedding pic.webp';
+import MapPin from 'lucide-react/dist/esm/icons/map-pin';
+import CheckCircle from 'lucide-react/dist/esm/icons/check-circle';
+import Globe from 'lucide-react/dist/esm/icons/globe';
+import Scale from 'lucide-react/dist/esm/icons/scale';
+import Shield from 'lucide-react/dist/esm/icons/shield';
+import Heart from 'lucide-react/dist/esm/icons/heart';
+import Gavel from 'lucide-react/dist/esm/icons/gavel';
+import Users from 'lucide-react/dist/esm/icons/users';
+import FileText from 'lucide-react/dist/esm/icons/file-text';
+import HelpCircle from 'lucide-react/dist/esm/icons/help-circle';
 
 const Home = () => {
   const revealVariants = {
@@ -13,6 +22,7 @@ const Home = () => {
   };
 
   return (
+    <main>
     <div className="bg-slate-950 text-slate-300 font-sans selection:bg-blue-500/30">
 
       {/* 1. HERO SECTION (Alignment Fixed) */}
@@ -108,7 +118,7 @@ const Home = () => {
           </div>
           <div className="grid md:grid-cols-2 gap-12 text-lg leading-relaxed text-slate-400">
             <p>
-              <strong>Court-Marriage.Site</strong> has been established to provide reliable, lawful, and discreet solutions for individuals seeking <strong>Court Marriage</strong>, <strong>Online Marriage</strong>, and <strong>Online Nikah e Shari’a</strong>. Our approach combines religious understanding with statutory compliance, ensuring every matter is handled with care and legality.
+              <strong>Court-MarriageSite</strong> has been established to provide reliable, lawful, and discreet solutions for individuals seeking <strong>Court Marriage</strong>, <strong>Online Marriage</strong>, and <strong>Online Nikah e Shari’a</strong>. Our approach combines religious understanding with statutory compliance, ensuring every matter is handled with care and legality.
             </p>
             <p>
               Whether you require documentation support like a <strong>Duplicate Nikah Nama</strong>, or are facing family disputes such as <strong>Divorce, Khula, or Child Custody</strong>, our platform connects you with experienced family law professionals who understand both Islamic principles and Pakistani law.
@@ -145,25 +155,27 @@ const Home = () => {
       </section>
 
       {/* 4. URDU SECTION */}
-      <section className="py-24 bg-blue-600/5" dir="rtl">
-        <div className="max-w-7xl mx-auto px-6 text-right">
-          <h2 className="text-4xl font-black text-white mb-12">کورٹ میرج اور فیملی لا سروسز</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-slate-900 p-8 rounded-2xl border-r-4 border-blue-600">
-              <h4 className="text-xl font-bold text-white mb-3 text-blue-400">عدالتی نکاح (Court Marriage)</h4>
-              <p className="text-slate-400 text-sm">پاکستانی قانون کے تحت کورٹ میرج کا باقاعدہ طریقہ کار، جس میں مکمل قانونی تحفظ اور دستاویزات فراہم کی جاتی ہیں۔</p>
-            </div>
-            <div className="bg-slate-900 p-8 rounded-2xl border-r-4 border-blue-600">
-              <h4 className="text-xl font-bold text-white mb-3 text-blue-400">آن لائن نکاح (Online Nikah)</h4>
-              <p className="text-slate-400 text-sm">بیرونِ ملک مقیم پاکستانیوں کے لیے شرعی اصولوں کے مطابق ایجاب و قبول اور نکاح رجسٹریشن کی سہولت۔</p>
-            </div>
-            <div className="bg-slate-900 p-8 rounded-2xl border-r-4 border-blue-600">
-              <h4 className="text-xl font-bold text-white mb-3 text-blue-400">نکاح رجسٹریشن</h4>
-              <p className="text-slate-400 text-sm">نکاح نامہ، کمپیوٹرائزڈ میریج سرٹیفکیٹ، اور ڈپلیکیٹ نکاح نامہ کے حصول میں مکمل قانونی معاونت۔</p>
-            </div>
-          </div>
-        </div>
-      </section>
+   {/* 4. URDU SECTION (Fixed Hierarchy & Contrast) */}
+<section className="py-24 bg-blue-600/5" dir="rtl">
+  <div className="max-w-7xl mx-auto px-6 text-right">
+    <h2 className="text-4xl font-black text-white mb-12">کورٹ میرج اور فیملی لا سروسز</h2>
+    <div className="grid md:grid-cols-3 gap-8">
+      <div className="bg-slate-900 p-8 rounded-2xl border-r-4 border-blue-600">
+        {/* h4 ko h3 kiya hierarchy ke liye */}
+        <h3 className="text-xl font-bold text-white mb-3 text-blue-400">عدالتی نکاح (Court Marriage)</h3>
+        <p className="text-slate-400 text-sm leading-relaxed">پاکستانی قانون کے تحت کورٹ میرج کا باقاعدہ طریقہ کار، جس میں مکمل قانونی تحفظ اور دستاویزات فراہم کی جاتی ہیں۔</p>
+      </div>
+      <div className="bg-slate-900 p-8 rounded-2xl border-r-4 border-blue-600">
+        <h3 className="text-xl font-bold text-white mb-3 text-blue-400">آن لائن نکاح (Online Nikah)</h3>
+        <p className="text-slate-400 text-sm leading-relaxed">بیرونِ ملک مقیم پاکستانیوں کے لیے شرعی اصولوں کے مطابق ایجاب و قبول اور نکاح رجسٹریشن کی سہولت۔</p>
+      </div>
+      <div className="bg-slate-900 p-8 rounded-2xl border-r-4 border-blue-600">
+        <h3 className="text-xl font-bold text-white mb-3 text-blue-400">نکاح رجسٹریشن</h3>
+        <p className="text-slate-400 text-sm leading-relaxed">نکاح نامہ، کمپیوٹرائزڈ میریج سرٹیفکیٹ، اور ڈپلیکیٹ نکاح نامہ کے حصول میں مکمل قانونی معاونت۔</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* 5. SERVICES LIST */}
       <section className="py-24 max-w-7xl mx-auto px-6">
@@ -223,6 +235,7 @@ const Home = () => {
         </div>
       </section>
     </div>
+    </main>
   );
 };
 

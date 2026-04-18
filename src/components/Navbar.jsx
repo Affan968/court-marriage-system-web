@@ -55,7 +55,7 @@ const Navbar = () => {
               Court <span className="text-yellow-500 mx-2">MARRIAGE</span> Site
             </h1>
             {/* Fix 3: Contrast improved (slate-500 to slate-400) */}
-            <span className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mt-1">Law Firm</span>
+            <span className="text-[14px] text-white-600 mr-15">PROFESSIONAL</span>
           </div>
         </Link>
 
@@ -125,16 +125,22 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle - FIXED: aria-label for Screen Readers */}
-        <div className="md:hidden flex items-center">
-          <button 
-            onClick={() => setIsOpen(!isOpen)} 
-            className="text-white p-2 focus:outline-none"
-            aria-label={isOpen ? "Close main menu" : "Open main menu"}
-            aria-expanded={isOpen}
-          >
-            {isOpen ? <X size={28} aria-hidden="true" /> : <Menu size={28} aria-hidden="true" />}
-          </button>
-        </div>
+      {/* Mobile Toggle - FIXED with aria-label */}
+<div className="md:hidden flex items-center">
+  <button 
+    onClick={() => setIsOpen(!isOpen)} 
+    className="text-white p-2 focus:outline-none"
+    // Ye hai asli fix jo Lighthouse maang raha hai:
+    aria-label={isOpen ? "Close menu" : "Open menu"} 
+    aria-expanded={isOpen}
+  >
+    {isOpen ? (
+      <X size={28} aria-hidden="true" />
+    ) : (
+      <Menu size={28} aria-hidden="true" />
+    )}
+  </button>
+</div>
       </div>
 
       {/* Mobile Menu */}
